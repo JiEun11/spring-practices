@@ -33,6 +33,7 @@ public class FileUploadService {
 			System.out.println("#################" + originFilename);
 			System.out.println("#################" + fileSize);
 			System.out.println("#################" + extName);
+			System.out.println("#################" + saveFilename);
 			
 			
 			byte[] data = multipartFile.getBytes();
@@ -41,7 +42,7 @@ public class FileUploadService {
 			os.close();
 			
 			url = URL_BASE + "/" + saveFilename;
-			
+			System.out.println(url);
 		} catch (IOException ex) {
 			throw new RuntimeException("file upload error : " + ex);
 		}
