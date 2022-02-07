@@ -1,5 +1,37 @@
 package com.poscoict.container.soundsystem;
 
-public class CDPlayerJavaConfigTest {
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.poscoict.container.config.soundsystem.CDPlayerConfig;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes= {CDPlayerConfig.class})
+public class CDPlayerJavaConfigTest {
+	@Rule
+	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+	
+	@Autowired
+	private CDPlayer cdPlayer;
+	
+	@Test
+	public void testCDPlayerNot() {
+		assertNotNull(cdPlayer);
+	}
+	
+	@Test
+	public void testPlay() {
+		cdPlayer.play();
+		
+//		assertTrue(1 == 2-1);
+		assertEquals( "Playing 시차 by 우원재", systemOutRule.getLog().replace("\r\n","").replace("\n", ""));
+	}
 }
