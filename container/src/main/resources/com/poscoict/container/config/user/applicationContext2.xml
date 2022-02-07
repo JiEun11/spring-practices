@@ -36,5 +36,9 @@
 	</bean>
 	
 	<!-- setter 사용하기 -->
+	<bean id="user5" class="com.poscoict.container.user.User" >
+		<property name="no" value="5"/>
+		<property name="name" value="도우너"/>
+	</bean>
 	
 </beans>
