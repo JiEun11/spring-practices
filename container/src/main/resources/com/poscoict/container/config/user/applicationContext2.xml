@@ -23,9 +23,18 @@
 	</bean>
 	
 	
-	<!-- 파라미터 2개인 생성자로 빈 성하기  -->
+	<!-- 파라미터 2개인 생성자로 빈 생성하기  -->
 	<bean id="user3" class="com.poscoict.container.user.User" >
 		<constructor-arg value="마이콜"/>
 		<constructor-arg value="3"/>
 	</bean>
+	
+	<!-- 파라미터 2개인 생성자로 빈 생성하기2 :index 주기 -->
+	<bean id="user4" class="com.poscoict.container.user.User" >
+		<constructor-arg index="1" value="4"/>
+		<constructor-arg index="0" value="또치"/>
+	</bean>
+	
+	<!-- setter 사용하기 -->
+	
 </beans>
