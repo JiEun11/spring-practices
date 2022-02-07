@@ -41,4 +41,15 @@
 		<property name="name" value="도우너"/>
 	</bean>
 	
+	<!-- DI하기(wiring)  -->
+	<bean id="friend" class="com.poscoict.container.user.Friend">
+		<constructor-arg value="길동이"/>
+	</bean>
+	<bean id="user6" class="com.poscoict.container.user.User" >
+		<property name="no" value="6"/>
+		<property name="name" value="도우너"/>
+		<property name="friend" ref="friend"/>
+	</bean>
+	
+	<!--  -->
 </beans>
