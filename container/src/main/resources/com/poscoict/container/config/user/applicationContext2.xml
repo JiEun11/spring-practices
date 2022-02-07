@@ -22,4 +22,10 @@
 		<constructor-arg value="둘리"/>
 	</bean>
 	
+	
+	<!-- 파라미터 2개인 생성자로 빈 성하기  -->
+	<bean id="user3" class="com.poscoict.container.user.User" >
+		<constructor-arg value="마이콜"/>
+		<constructor-arg value="3"/>
+	</bean>
 </beans>

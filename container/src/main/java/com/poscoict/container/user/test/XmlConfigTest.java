@@ -37,6 +37,10 @@ public class XmlConfigTest {
 			// 2. name + type
 			user = ac.getBean("user2",User.class);
 			System.out.println(user);
+			
+			// 2개 parameter 생성자로 생성된 빈 가져오기 
+			user = (User) ac.getBean("user3");
+			System.out.println(user);
 		}
 		
 	// XML Auto Configuration (Annotation Scanning)
