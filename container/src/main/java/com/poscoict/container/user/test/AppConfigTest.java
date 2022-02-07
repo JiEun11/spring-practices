@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.poscoict.container.config.user.AppConfig01;
+import com.poscoict.container.soundsystem.CDPlayer;
 import com.poscoict.container.user.User;
 
 public class AppConfigTest {
@@ -20,7 +21,6 @@ public class AppConfigTest {
 	// 설정 클래스에 @Configuration이 반드시 필요함 
 	private static void testAppConfig02() {
 		ApplicationContext ac = new AnnotationConfigApplicationContext("com.poscoict.container.config.user");
-		
 		User user = ac.getBean(User.class);
 		System.out.println(user);
 	}
