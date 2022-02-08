@@ -1,8 +1,11 @@
 package com.poscoict.container.videosystem;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,6 +18,9 @@ import com.poscoict.container.config.videosystem.DvdPlayerConfig;
 @ContextConfiguration(classes= {DvdPlayerConfig.class})
 public class DvdPlayerJavaConfigTest {
 
+	@Rule
+	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+	
 	@Autowired
 	private DigitalVideoDisc dvd;
 	
@@ -31,4 +37,9 @@ public class DvdPlayerJavaConfigTest {
 		assertNotNull(dvdPlayer);
 	}
 	
+	@Test
+	public void testPlay() {
+		dvdPlayer.play();
+		assertEquals("Playing Movie MARVEL's Avengers", systemOutRule.getLog().replace("\r\n","").replace("\n", ""));
+	}
 }

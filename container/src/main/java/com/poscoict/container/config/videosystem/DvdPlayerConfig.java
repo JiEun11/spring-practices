@@ -18,4 +18,7 @@ public class DvdPlayerConfig {
 	public DVDPlayer dvdPlayer() {
 		return new DVDPlayer();
 	}
+	
+	// 주입(Injection) 하기 1
+	// 
 }
