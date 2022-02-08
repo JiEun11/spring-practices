@@ -18,10 +18,17 @@ public class DvdPlayerJavaConfigTest {
 	@Autowired
 	private DigitalVideoDisc dvd;
 	
+	@Autowired
+	private DVDPlayer dvdPlayer;
+	
 	@Test
 	public void testDVDNotNull() {
 		assertNotNull(dvd);
 	}
 	
+	@Test
+	public void testDVDPlayerNotNull() {
+		assertNotNull(dvdPlayer);
+	}
 	
 }
